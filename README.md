@@ -1,131 +1,101 @@
-# ERPLibre
+# ininaERP
 
-ERPLibre is a CRM/ERP platform including automated installation, maintenance, and development of open source modules of
-the Odoo community version. It is a "soft-fork" of the Odoo Community Edition (OCE), meaning it aims at contributing back
-upstream.
-It is based on a set of production-ready modules, supported by the Odoo Community Association (OCA) and an
-ecosystem of specialized companies. This solution ensures digital sovereignty in a local environment while integrating
-pre-trained Generative Transformers (GPT), bringing an additional dimension to data management and automation.
+Welcome to **ininaERP**, a next-generation CRM/ERP platform designed for seamless integration and enhanced automation. Leveraging the power of open-source, it includes automated installation, maintenance, and development of Odoo community modules.
 
-Follow us on Mastodon : https://fosstodon.org/@erplibre
+As a "soft-fork" of the Odoo Community Edition (OCE), ininaERP emphasizes collaboration and aims to contribute enhancements back to the community. It is built on a robust foundation of production-ready modules supported by the Odoo Community Association (OCA) and a vibrant ecosystem of specialized companies. This ensures digital sovereignty while integrating pre-trained Generative Transformers (GPT) for advanced data management and automation.
 
-# Installation
+Stay connected with us on Mastodon: [ininaERP on Fosstodon](https://fosstodon.org/@erplibre)
 
-Select a guide to install your environment.
+---
 
-## Easy install on Ubuntu or Debian using Docker
+## Installation
+Choose your preferred guide to set up your environment.
 
-This has been tested in Debian 12 and Ubuntu 24.04 LTS.
 
-**Note** : This is meant for a test environment, on a local network or similar environment not directly exposed to the Internet.
+### Installation from Source Code
 
-1. Make sure Docker and nginx web server are installed:<BR>
-```sudo apt install docker docker-compose nginx```
-1. Get the latest ERPLibre Docker compose file:<BR>
-```wget https://raw.githubusercontent.com/ERPLibre/ERPLibre/v1.5.0/docker-compose.yml```
-1. Install and run ERPLibre with Docker running as a daemon (web server):<BR>
-```sudo docker-compose up -d```
-1. Open the final installation step at this web page :<BR>
-```http://[server IP]:8069```<BR>
-![Capture du 2024-11-05 08-34-45](https://github.com/user-attachments/assets/7c6295b6-cc95-462d-822c-3ff72b772155)
-1. Finish the installation by providing a database name, email and password. then click on **Create Database**. Depending on your system resources **this may take more than 2 minutes without feedback !** Check your browser loading indicator.
-1. Next, the web page will reload itself and you should see the Applications list in ERPLibre:<BR>
-![2024-11-05_09-54](https://github.com/user-attachments/assets/1742c4a9-da96-466b-9c17-35eb5ca786ff)
-You can now personalize your ERPLibre installation.
-
-For more information, read [Docker guide](./docker/README.md).
-
-## Install from source code
-
-Into Ubuntu, minimal dependency:
-
+#### Minimal Dependencies for Ubuntu:
 ```bash
 sudo apt install make git curl
 ```
 
-Into Ubuntu, developer dependency:
-
+#### Developer Dependencies for Ubuntu:
 ```bash
-sudo apt install make build-essential libssl-dev zlib1g-dev libreadline-dev libsqlite3-dev curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev liblzma-dev libbz2-dev libldap2-dev libsasl2-dev
+sudo apt install make build-essential libssl-dev zlib1g-dev libreadline-dev \
+libsqlite3-dev curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev \
+liblzma-dev libbz2-dev libldap2-dev libsasl2-dev
 ```
 
-Clone the project:
-
+#### Clone the Project:
 ```bash
-git clone https://github.com/ERPLibre/ERPLibre.git
-cd ERPLibre
+git clone https://github.com/ininaERP/ininaERP.git
+cd ininaERP
 ```
 
-Support Ubuntu 20.04, 22.04, 24.04 and OSX. The installation duration is more than 30 minutes.
+#### Supported Platforms:
+- Ubuntu 20.04, 22.04, 24.04
+- macOS
 
+#### Install and Configure:
 ```bash
 make install_os
 make install_odoo_16
 ```
 
-Update your configuration if you need to run from another interface than 127.0.0.1, file `config.conf`
-
-```
+Update the configuration file `config.conf` if you need to change the default interface:
+```bash
 xmlrpc_interface = 0.0.0.0
 ```
 
-Show version :
-
+#### Check Version:
 ```bash
 make version
 ```
 
-Ready to execute:
-
+#### Run ininaERP:
 ```bash
 make run
 ```
 
+---
 
-## Discover guide
+## Additional Guides
 
-[Guide to run ERPLibre in discover to learn it](./doc/DISCOVER.md).
+- [Learn ininaERP](./doc/DISCOVER.md): A beginner’s guide.
+- [Production Setup](./doc/PRODUCTION.md): Step-by-step for production environments.
+- [Development Setup](./doc/DEVELOPMENT.md): Optimize your development environment.
 
-## Production guide
+### PyCharm Configuration
+1. Open PyCharm:
+    ```bash
+    make pycharm_open
+    ```
 
-[Guide to run ERPLibre in production server](./doc/PRODUCTION.md).
+2. Close and configure it:
+    ```bash
+    make pycharm_configure
+    ```
 
-## Development guide
+3. Reopen PyCharm:
+    ```bash
+    make pycharm_open
+    ```
 
-[Guide to run ERPLibre in development environment](./doc/DEVELOPMENT.md).
+---
 
-### Pycharm
+## Running the Application
+Explore different use cases in the [Execution Guide](./doc/RUN.md).
 
-First open
+---
 
-```bash
-make pycharm_open
-```
+## Git Repository Management
+For repository customization, refer to [GIT_REPO.md](./doc/GIT_REPO.md).
 
-Close it, and configure
+---
 
-```bash
-make pycharm_configure
-```
-
-Open it
-
-```bash
-make pycharm_open
-```
-
-# Execution
-
-[Guide to run ERPLibre with different case](./doc/RUN.md).
-
-# git-repo
-
-To change repository like addons, see [GIT_REPO.md](doc/GIT_REPO.md)
-
-# Test
-
-Execute ERPLibre test with his code generator.
-
+## Testing
+Run comprehensive tests for ininaERP using the code generator:
 ```bash
 time make test_full_fast
 ```
+
