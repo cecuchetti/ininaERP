@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+    <remote name="origin"
+            fetch="https://github.com/"
+            review="https://github.com/" />
+            
+    <!-- Core Odoo Repository -->
+    <project name="odoo/odoo"
+             path="odoo"
+             remote="origin"
+             revision="refs/heads/16.0" />
+             
+    <!-- OCA Addons -->
+    <project name="OCA/account-invoicing"
+             path="addons/OCA_account-invoicing"
+             remote="origin"
+             revision="16.0" />
+             
+    <project name="OCA/helpdesk"
+             path="addons/OCA_helpdesk"
+             remote="origin"
+             revision="16.0" />
+             
+    <!-- Custom Configuration -->
+    <include name="../common/common.xml" />
+</manifest> 

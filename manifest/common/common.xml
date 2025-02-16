@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+    <!-- Common configurations across all Odoo versions -->
+    <remote name="custom"
+            fetch="https://github.com/your-organization/"
+            review="https://github.com/your-organization/" />
+            
+    <!-- Development Tools -->
+    <project name="pre-commit/pre-commit-hooks"
+             path="dev-tools/pre-commit-hooks"
+             remote="origin"
+             revision="master" />
+</manifest> 
